@@ -1,0 +1,18 @@
+
+.form-horizontal{
+    width: 300px;
+    margin: 0 auto;
+}
+.title{
+    text-align:center;
+}
+
+h3 {
+    font-family: "Microsoft YaHei", "Arial Narrow", sans-serif;
+    font-size: 36px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

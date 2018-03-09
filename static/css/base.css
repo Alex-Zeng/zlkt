@@ -1,0 +1,23 @@
+.navbar-logo{
+    width:340px;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+.main{
+    background: #fff;
+    width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+body{
+    font-family: "Microsoft YaHei", "Arial Narrow", sans-serif;
+   background-color: #f8f8f8;
+}
+#bs-example-navbar-collapse-1{
+
+    margin: 0 auto;
+}
+.header_username{
+    color: red;
+    font-style: italic;
+}

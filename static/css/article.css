@@ -1,0 +1,14 @@
+
+.title{
+    text-align:center;
+}
+h3 {
+    font-family: "Microsoft YaHei", "Arial Narrow", sans-serif;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form {
+    margin: 10px 10px;
+    text-align: right;
+}
