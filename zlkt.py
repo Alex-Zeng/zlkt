@@ -48,7 +48,7 @@ def login():
         password = request.form.get('password')
         user = User.query.filter(User.telephone == telephone).first()
         if user  :
-            if User.check_password(password):
+            if User.check_password(user,raw_password=password):
                 session['user_id'] = user.id
                 session['username'] = user.username
                 # session过期期限31天
