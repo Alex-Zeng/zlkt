@@ -25,7 +25,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="{{ url_for('index') }}">首页 <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">我的简历</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -44,8 +44,8 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 {% if session.get('username') %}
-                    <li><a href="">欢迎,<span class="header_username">{{ session.get('username') }}</span></a></li>
-                    <li><a href="{{ url_for('logout') }}">退出</a></li>
+                    <li><a href="">欢迎回家,<span class="header_username glyphicon glyphicon-user">{{ session.get('username') }}</span></a></li>
+                    <li><a id="logout" href="{{ url_for('logout') }}">退出</a></li>
                 {% else %}
                      <li><a href="{{ url_for('login') }}">登录</a></li>
                     <li><a href="{{ url_for('register') }}">注册</a></li>

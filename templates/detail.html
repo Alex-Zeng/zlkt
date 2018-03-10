@@ -46,7 +46,7 @@
                 <h5>评论: ({{ article.comment|length }})</h5>
                     {% for comment in article.comment %}
                         <li>
-                            <span>{{ comment.comment_author }}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ comment.create_time }}</span>
+                            <span class="glyphicon glyphicon-user">{{ comment.comment_author }}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span >{{ comment.create_time }}</span>
                         </li>
                         <li>{{ comment.comment_content }}</li>
                         <hr>

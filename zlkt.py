@@ -36,7 +36,8 @@ def add_comment(article_id):
 @app.route('/search/')
 def search():
     q = request.args.get('q')
-    articles = Article.query.filter(or_(Article.title.contains(q),Article.content.contains(q))).order_by('-create_time')
+    articles = Article.query.filter(or_(Article.title.contains(q),Article.content.contains(q))).order_by('-create_time').all()
+    print(articles)
     return render_template('index.html', articles=articles)
 
 @app.route('/login/', methods=['GET', 'POST'])

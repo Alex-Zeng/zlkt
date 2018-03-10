@@ -9,7 +9,7 @@ DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
 PASSWORD = 'windows'
-HOST = 'localhost'
+HOST = '119.29.179.53'
 PORT = '3306'
 DATABASE = 'flask_db'
 

@@ -6,24 +6,36 @@
 
 {% endblock %}
 {% block main %}
-    <ul>
-    {% for article in articles %}
-        <li>
-<div class="panel panel-default" >
-  <div class="panel-heading">
-      <a href="{{ url_for('detail',id=article.id) }}"> <h3 class="panel-title">{{ article.title }}</h3></a>
+    {% if articles %}
+        <ul>
 
-  </div>
-  <div class="panel-body">
-    {{ article.content | safe }}
-  </div>
-         <div class="footer"> <p>{{ article.author.username }}&nbsp;&nbsp;&nbsp;&nbsp;{{ article.create_time }}</p>
-                <p></p></div>
-</div>
+            {% for article in articles %}
+                <li>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ">
+                            <a href="{{ url_for('detail',id=article.id) }}"><h3
+                                    class="panel-title">{{ article.title }}</h3>
+                            </a>
 
-        </li>
-    {% endfor %}
+                        </div>
+                        <div class="panel-body ">
+                            {{ article.content | safe }}
+                        </div>
+
+                        <div class="footer">
+                            <a href="{{ url_for('detail',id=article.id) }}">阅读全文</a>
+                            <p>{{ article.author.username }}&nbsp;&nbsp;&nbsp;&nbsp;{{ article.create_time }}</p>
+
+                            <p></p></div>
+                    </div>
+
+                </li>
+            {% endfor %}
+
         </ul>
+        {% else %}
+            <h4>未找到相关文章,试试输入别的关键字...</h4>
 
+    {% endif %}
 
 {% endblock %}
