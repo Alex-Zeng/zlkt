@@ -2,9 +2,28 @@
 {% block title %}首页{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="url_for('static',css/index.html)">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+
 {% endblock %}
 {% block main %}
-<div class="title"></div>
-    <div class="content"></div>
+    <ul>
+    {% for article in articles %}
+        <li>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+      <a href="{{ url_for('detail',id=article.id) }}"> <h3 class="panel-title">{{ article.title }}</h3></a>
+
+  </div>
+  <div class="panel-body">
+    {{ article.content | safe }}
+  </div>
+         <div class="footer"> <p>{{ article.author.username }}&nbsp;&nbsp;&nbsp;&nbsp;{{ article.create_time }}</p>
+                <p></p></div>
+</div>
+
+        </li>
+    {% endfor %}
+        </ul>
+
+
 {% endblock %}

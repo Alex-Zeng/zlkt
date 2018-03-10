@@ -1,0 +1,24 @@
+.panel-title{
+    color: #00afff;
+    font-size: 16px;
+    font-weight: 600;
+}
+.panel-content{
+}
+.footer{
+    text-align: right;
+    font-size: 14px;
+}
+
+ul,li{
+    list-style: none;
+    padding: 0;
+
+}
+li{
+    margin: 10px 10px;
+
+}
+.panel{
+    border: none;
+}

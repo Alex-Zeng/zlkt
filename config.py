@@ -8,10 +8,10 @@ SECRET_KEY= os.urandom(24)
 DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
-PASSWORD = 'zdh1989'
-HOST = '127.0.0.1'
+PASSWORD = 'windows'
+HOST = '119.29.179.53'
 PORT = '3306'
-DATABASE = 'flaskdb'
+DATABASE = 'flask_db'
 
 SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT,DRIVER,USERNAME,PASSWORD,HOST
                                              ,PORT,DATABASE)
