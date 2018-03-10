@@ -12,18 +12,19 @@ db.init_app(app)
 
 # 登录限制装饰器
 
-
+#首页
 @app.route('/')
 def index():
     articles = Article.query.order_by('-create_time').all()
     return render_template('index.html', articles=articles)
 
+# 详情页
 @app.route('/detail/<id>/')
 def detail(id):
     article = Article.query.filter(Article.id==id).first()
 
     return render_template('detail.html',article=article)
-
+#添加评论
 @app.route('/add_comment/<article_id>',methods=['POST'])
 def add_comment(article_id):
     comment_content = request.form.get('comment_content')
@@ -32,14 +33,14 @@ def add_comment(article_id):
     db.session.add(comment)
     db.session.commit()
     return redirect(url_for('detail',id=article_id))
-
+# 搜素文章
 @app.route('/search/')
 def search():
     q = request.args.get('q')
     articles = Article.query.filter(or_(Article.title.contains(q),Article.content.contains(q))).order_by('-create_time').all()
     print(articles)
     return render_template('index.html', articles=articles)
-
+# 登录
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -60,13 +61,13 @@ def login():
         else:
             return '用户名不存,请确认后再登录'
 
-
+# 退出
 @app.route('/logout/')
 def logout():
     session.clear()
     return redirect(url_for('index'))
 
-
+# 注册
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -89,7 +90,7 @@ def register():
             db.session.commit()
             return redirect(url_for('login'))
 
-
+# 发布文章,需要登录@login_required
 @app.route('/article/', methods=['GET', 'POST'])
 @login_required
 def article():
