@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}详情页{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename="css/detail.css") }}">
+{% endblock %}
+{% block main %}
+    <ul>
+        <li class="title">
+            <h3>{{ article.title }}</h3>
+            <P class="article-info">
+                <span>作者: {{ article.author.username }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>时间: {{ article.create_time }}</span>
+            </P>
+            <hr>
+        </li>
+        <li class="content">
+            {{ article.content|safe }}
+            <hr>
+        </li>
+
+        <li class="comment">
+
+            <form action="{{ url_for('add_comment',article_id=article.id) }}" method="post">
+                <div class="form-group">
+                    <textarea class="form-control" name="comment_content" rows="4" placeholder="请填写评论"></textarea>
+                </div>
+
+                <div class="row" style="text-align: left">
+                    <div class=" col-xs-4">
+                        <input type="text" name="comment_author" class="form-control " placeholder="请填写昵称">
+
+                    </div>
+
+                    <div class=" col-xs-4">
+
+                        <button class="btn btn-primary">立即评论</button>
+                    </div>
+                </div>
+
+            </form>
+        </li>
+      <div class="show_comment">
+
+                <ul>
+                <h5>评论: ({{ article.comment|length }})</h5>
+                    {% for comment in article.comment %}
+                        <li>
+                            <span class="glyphicon glyphicon-user">{{ comment.comment_author }}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span >{{ comment.create_time }}</span>
+                        </li>
+                        <li>{{ comment.comment_content }}</li>
+                        <hr>
+
+                    {% endfor %}
+                </ul>
+            </div>
+    </ul>
+{% endblock %}

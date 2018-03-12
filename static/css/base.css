@@ -1,23 +1,38 @@
-.navbar-logo{
-    width:340px;
+.navbar-logo {
+    width: 340px;
     margin-top: -15px;
     margin-left: -15px;
 }
-.main{
+
+.main {
     background: #fff;
     width: 730px;
     margin: 0 auto;
     overflow: hidden;
 }
-body{
+
+body {
     font-family: "Microsoft YaHei", "Arial Narrow", sans-serif;
-   background-color: #f8f8f8;
+    background-color: #f8f8f8;
+    font-size: 12px;
 }
-#bs-example-navbar-collapse-1{
+
+#logout:hover {
+    color: #f60;
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+#bs-example-navbar-collapse-1 {
 
     margin: 0 auto;
 }
-.header_username{
-    color: red;
+
+.header_username {
+    color: #f60;
     font-style: italic;
 }

@@ -1,0 +1,27 @@
+
+.title {
+    text-align: center;
+    color: #00afff;
+}
+
+h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #105cb6;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 10px 10px;
+
+}
+
+.article-info {
+    color: rgb(0, 0, 0);
+    font-style: italic;
+}
+.show_comment span{
+    font-style: italic;
+}
